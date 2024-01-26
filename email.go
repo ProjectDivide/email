@@ -1,18 +1,11 @@
 package email
 
 import (
-	"log"
 	"net/smtp"
 	"os"
-
-	"github.com/joho/godotenv"
 )
 
 func NewEmail() Email {
-
-	if err := godotenv.Load(); err != nil {
-		log.Fatal("Error loading .env file")
-	}
 
 	gmailPassword := os.Getenv("GMAIL_PASSWORD")
 	smtpEndpoint := os.Getenv("SMTP_ENDPOINT")
